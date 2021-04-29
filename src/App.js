@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Redirect, Route } from "react-router-dom";
+import Layout from "./components/layout";
 import Home from "./components/pages/home";
 import Saved from "./components/pages/saved";
 
@@ -11,7 +12,11 @@ const App = () => {
       <Redirect to="/" />
     </Switch>
   );
-  return <>{routes}</>;
+  return (
+    <>
+      <Layout>{routes}</Layout>
+    </>
+  );
 };
 
 export default App;

@@ -1,6 +1,8 @@
 import React from "react";
-import { Navbar, Form, FormControl, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, Form, FormControl, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import Home from "../static/home.svg";
+import Saved from "../static/saved.svg";
 
 const layout = (props) => {
   return (
@@ -11,16 +13,18 @@ const layout = (props) => {
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <NavDropdown
-            className="ml-auto"
-            title="Select Category"
-            id="basic-nav-dropdown"
-          >
-            <NavDropdown.Item href="#action/3.1">Saved Notes</NavDropdown.Item>
-          </NavDropdown>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-1" />
-          </Form>
+          <Nav className="ml-auto">
+            <LinkContainer to="/">
+              <Nav.Link>
+                <img className="svg_nav" src={Home} alt="Home" />
+              </Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/saved">
+              <Nav.Link>
+                <img className="svg_nav" src={Saved} alt="Saved" />
+              </Nav.Link>
+            </LinkContainer>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
 
