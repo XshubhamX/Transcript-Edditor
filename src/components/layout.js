@@ -1,8 +1,7 @@
 import React from "react";
-import { Nav, Navbar, Form, FormControl, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import Home from "../static/home.svg";
-import Saved from "../static/saved.svg";
 
 const layout = (props) => {
   return (
@@ -17,11 +16,6 @@ const layout = (props) => {
             <LinkContainer to="/">
               <Nav.Link>
                 <img className="svg_nav" src={Home} alt="Home" />
-              </Nav.Link>
-            </LinkContainer>
-            <LinkContainer to="/saved">
-              <Nav.Link>
-                <img className="svg_nav" src={Saved} alt="Saved" />
               </Nav.Link>
             </LinkContainer>
           </Nav>
