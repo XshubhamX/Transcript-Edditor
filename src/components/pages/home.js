@@ -22,29 +22,20 @@ const Home = (props) => {
     if (isListening) {
       mic.start();
       mic.onend = () => {
-        console.log("continue..");
         mic.start();
       };
     } else {
       mic.stop();
-      mic.onend = () => {
-        console.log("Stopped Mic on Click");
-      };
+      mic.onend = () => {};
     }
-    mic.onstart = () => {
-      console.log("Mics on");
-    };
 
     mic.onresult = (event) => {
       const transcript = Array.from(event.results)
         .map((result) => result[0])
         .map((result) => result.transcript)
         .join("");
-      console.log(transcript);
       setNote(transcript);
-      mic.onerror = (event) => {
-        console.log(event.error);
-      };
+      mic.onerror = (event) => {};
     };
   };
   const handleSaveNote = () => {
